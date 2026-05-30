@@ -7,11 +7,11 @@ Dieses Repository zeigt die schrittweise Übersetzung eines komplexen Entity-Rel
 * **Ternäre Beziehungen:** Saubere relationale Abbildung einer 3er-Beziehung zwischen drei Entitäten unter Verwendung von zusammengesetzten Primärschlüsseln.
 * **Rekursive Rollenauflösung:** Abbildung von identischen Entitätstypen in unterschiedlichen Beziehungsrollen durch explizite Spaltenumbenennung.
 
-## Das relationale Schema (Kurznotation):
-* **Staedte** (__Name, Bundesland__)
-* **Bahnhoefe** (__Name__, AnzahlGleise, (StadtName, Bundesland) -> Staedte)
-* **Zuege** (__ZugNr__, Laenge, StartBahnhof -> Bahnhoefe, ZielBahnhof -> Bahnhoefe)
-* **verbindet** (__ZugNr -> Zuege, Von_BHf -> Bahnhoefe__, Nach_BHf -> Bahnhoefe, Abfahrt, Ankunft)
+## Das relationale Schema:
+* **Staedte** (Name `[PK]`, Bundesland `[PK]`)
+* **Bahnhoefe** (Name `[PK]`, AnzahlGleise, StadtName, Bundesland)
+* **Zuege** (ZugNr `[PK]`, Laenge, StartBahnhof, ZielBahnhof)
+* **verbindet** (ZugNr `[PK]`, Von_BHf `[PK]`, Nach_BHf, Abfahrt, Ankunft)
 
 ## Verzeichnisstruktur
 * `schema.sql`: Lauffähiger SQL-Code (PostgreSQL-Syntax) für die Tabellenerstellung.
