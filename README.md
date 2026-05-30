@@ -8,10 +8,10 @@ Dieses Repository zeigt die schrittweise Übersetzung eines komplexen Entity-Rel
 * **Rekursive Rollenauflösung:** Abbildung von identischen Entitätstypen in unterschiedlichen Beziehungsrollen durch explizite Spaltenumbenennung.
 
 ## Das relationale Schema (Kurznotation):
-* **Staedte** ($\underline{\text{Name, Bundesland}}$)
-* **Bahnhoefe** ($\underline{\text{Name}}$, AnzahlGleise, $(\text{StadtName, Bundesland}) \uparrow \text{Staedte}$)
-* **Zuege** ($\underline{\text{ZugNr}}$, Laenge, $\text{StartBahnhof} \uparrow \text{Bahnhoefe}$, $\text{ZielBahnhof} \uparrow \text{Bahnhoefe}$)
-* **verbindet** ($\underline{\text{ZugNr} \uparrow \text{Zuege}, \text{Von\_BHf} \uparrow \text{Bahnhoefe}}$, $\text{Nach\_BHf} \uparrow \text{Bahnhoefe}$, Abfahrt, Ankunft)
+* **Staedte** (__Name, Bundesland__)
+* **Bahnhoefe** (__Name__, AnzahlGleise, (StadtName, Bundesland) -> Staedte)
+* **Zuege** (__ZugNr__, Laenge, StartBahnhof -> Bahnhoefe, ZielBahnhof -> Bahnhoefe)
+* **verbindet** (__ZugNr -> Zuege, Von_BHf -> Bahnhoefe__, Nach_BHf -> Bahnhoefe, Abfahrt, Ankunft)
 
 ## Verzeichnisstruktur
 * `schema.sql`: Lauffähiger SQL-Code (PostgreSQL-Syntax) für die Tabellenerstellung.
