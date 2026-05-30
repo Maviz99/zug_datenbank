@@ -8,10 +8,10 @@ Dieses Repository zeigt die schrittweise Übersetzung eines komplexen Entity-Rel
 * **Rekursive Rollenauflösung:** Abbildung von identischen Entitätstypen in unterschiedlichen Beziehungsrollen durch explizite Spaltenumbenennung.
 
 ## Das relationale Schema:
-* **Staedte** (Name `[PK]`, Bundesland `[PK]`)
-* **Bahnhoefe** (Name `[PK]`, AnzahlGleise, StadtName, Bundesland)
-* **Zuege** (ZugNr `[PK]`, Laenge, StartBahnhof, ZielBahnhof)
-* **verbindet** (ZugNr `[PK]`, Von_BHf `[PK]`, Nach_BHf, Abfahrt, Ankunft)
+* **Staedte** (Name: VARCHAR `[PK]`, Bundesland: VARCHAR `[PK]`)
+* **Bahnhoefe** (Name: VARCHAR `[PK]`, AnzahlGleise: INT, StadtName: VARCHAR, Bundesland: VARCHAR)
+* **Zuege** (ZugNr: INT `[PK]`, Laenge: INT, StartBahnhof: VARCHAR, ZielBahnhof: VARCHAR)
+* **verbindet** (ZugNr: INT `[PK]`, Von_BHf: VARCHAR `[PK]`, Nach_BHf: VARCHAR, Abfahrt: TIME, Ankunft: TIME)
 
 ## Verzeichnisstruktur
 * `schema.sql`: Lauffähiger SQL-Code (PostgreSQL-Syntax) für die Tabellenerstellung.
